@@ -14,4 +14,15 @@ public class DemoUtilsTest {
 
     }
 
+    @Test
+    void testNullAndNotNull() {
+        DemoUtils demoUtils = new DemoUtils();
+        String str1 = null;
+        String str2 = "Tamer";
+
+        assertNull(demoUtils.checkNull(str1), "Object should be null");
+        assertNotNull(demoUtils.checkNull(str2), "Object should not be null");
+
+    }
+
 }
