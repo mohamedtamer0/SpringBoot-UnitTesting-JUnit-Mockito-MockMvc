@@ -3,6 +3,8 @@ package junitdemo;
 import org.example.DemoUtils;
 import org.junit.jupiter.api.*;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -86,6 +88,23 @@ public class DemoUtilsTest {
     void testArrayEquals() {
         String[] stringsArray = {"A", "B", "C"};
         assertArrayEquals(stringsArray, demoUtils.getFirstThreeLettersOfAlphabet(), "Array should be the Same");
+    }
+
+    @DisplayName("Iterable equals")
+    @Test
+    void testIterableEquals() {
+        List<String> theList = List.of("Tamer", "2", "code");
+
+        assertIterableEquals(theList, demoUtils.getAcademyInList(), "Expected list should be same as actual list");
+    }
+
+
+    @DisplayName("Lines match")
+    @Test
+    void testLinesMatch() {
+        List<String> theList = List.of("Tamer", "2", "code");
+
+        assertLinesMatch(theList, demoUtils.getAcademyInList(), "Lines should match");
     }
 
 
