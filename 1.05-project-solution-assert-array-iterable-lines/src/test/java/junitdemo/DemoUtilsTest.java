@@ -80,4 +80,13 @@ public class DemoUtilsTest {
 
     }
 
+
+    @DisplayName("Array Equals")
+    @Test
+    void testArrayEquals() {
+        String[] stringsArray = {"A", "B", "C"};
+        assertArrayEquals(stringsArray, demoUtils.getFirstThreeLettersOfAlphabet(), "Array should be the Same");
+    }
+
+
 }
